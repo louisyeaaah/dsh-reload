@@ -1,0 +1,19 @@
+# 提交到 awesome-dsh-plugin 的条目（市场列表读的就是那份注册表）
+#
+# 用法：仓库建满 24 小时后，fork github.com/awesome-dsh-plugin/awesome-dsh-plugin，
+# 把这份文件原样放到 data/plugins/louisyeaaah__dsh-reload.yml，然后开 PR。
+# 一个 PR 只加一个文件，不要手工改 README（那边是生成的）。
+#
+# 注意：description 会被拿去和代码逐条核对，所以只写代码里真有的东西。
+url: https://github.com/louisyeaaah/dsh-reload
+name: louisyeaaah/dsh-reload
+category: dev
+description:
+  en: >-
+    Hot-reload DSH plugins and skills without restarting: reload_plugin re-imports a loaded
+    plugin's own modules and re-applies it with rollback, and reload_skill forces skill
+    re-discovery and reports why one is missing.
+  zh: >-
+    不重启就热重载 DSH 插件与技能：reload_plugin 重新加载插件的模块并重新 apply（失败回滚），
+    reload_skill 强制技能目录重新发现并诊断技能为什么看不见。
+tarball: https://github.com/louisyeaaah/dsh-reload/releases/download/v0.1.4/dsh-reload-0.1.4.tgz

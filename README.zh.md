@@ -35,6 +35,23 @@ DSH 自带热更新，但有三处缺口，都是实测出来的（证据见 [`D
 
 ## 安装
 
+别人（或你自己在另一台机器上）三种装法，任选其一：
+
+```sh
+# 1) 直接从 GitHub 装（推荐）
+dsh plugin --profile <profile> add github:louisyeaaah/dsh-reload
+
+# 2) 用 Release 里预打包的 tarball（无需构建，链接钉在 tag 上不会失效）
+dsh plugin --profile <profile> add "https://github.com/louisyeaaah/dsh-reload/releases/download/v0.1.4/dsh-reload-0.1.4.tgz"
+
+# 3) 应用内：插件管理面板 / dsh-market 里搜 dsh-reload
+```
+
+三种方式都**不需要重启**：宿主会把新增的插件行热组装进来。
+技能随插件一起注册（`apply()` 里调 `ctx.skills.register()`），不用手动往 `~/.dsh/skills/` 拷。
+
+本仓库自己开发时用的手动装法：
+
 ```sh
 scripts/install.sh [profile]     # 默认 desktop
 ```

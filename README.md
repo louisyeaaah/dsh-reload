@@ -33,7 +33,7 @@ DSH ships hot reload, but three gaps make "edit the plugin, restart the app" the
 
 ## Install
 
-`dsh plugin --profile <profile> <args>` forwards `<args>` to pnpm inside `$DSH_HOME/profiles/<profile>`, so all three package routes end up as an ordinary dependency of the profile.
+`dsh plugin --profile <profile> <args>` forwards `<args>` to pnpm inside `$DSH_HOME/profiles/<profile>`, so every route below ends up as an ordinary dependency of the profile.
 
 **1. From GitHub**
 
@@ -41,13 +41,21 @@ DSH ships hot reload, but three gaps make "edit the plugin, restart the app" the
 dsh plugin --profile <profile> add github:louisyeaaah/dsh-reload
 ```
 
-**2. From npm** (once published)
+**2. From the prebuilt tarball** (no build step, pinned so the link cannot rot)
+
+```sh
+dsh plugin --profile <profile> add "https://github.com/louisyeaaah/dsh-reload/releases/download/v0.1.4/dsh-reload-0.1.4.tgz"
+```
+
+Every release carries the packed tarball; the asset name is versioned and the URL is pinned to the tag, so this link keeps working after the next release.
+
+**3. From npm** (once published)
 
 ```sh
 dsh plugin --profile <profile> add dsh-reload
 ```
 
-**3. In the app** — open the Plugin Manager / dsh-market panel in the DSH UI and install `dsh-reload` there. The package ships `dsh.bundle.patch` → [`cordis.patch.yml`](./cordis.patch.yml), whose `insert` row (`id: tool-reload`) registers the two tools and the two commands.
+**4. In the app** — open the Plugin Manager / dsh-market panel in the DSH UI and install `dsh-reload` there. The package ships `dsh.bundle.patch` → [`cordis.patch.yml`](./cordis.patch.yml), whose `insert` row (`id: tool-reload`) registers the two tools and the two commands.
 
 **Local / development install**
 
