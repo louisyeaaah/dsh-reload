@@ -1,0 +1,19 @@
+# dsh-reload bundle patch
+#
+# 把 dsh-reload 的两个工具（reload_plugin / reload_skill）和两个斜杠命令
+# （/reload-plugin、/reload-skill）注册进 DSH。
+#
+# 为什么放在 patch 层：本地开发的插件不走 npm bundle 那条路，
+# 和 dsh-video / dsh-personal-assistant 用的是同一套机制。
+- insert:
+    - id: tool-reload
+      name: 'dsh-reload'
+      config:
+        # 兜底的本地技能提供方：宿主自带的 filesystem 提供方在某个根目录上翻车时
+        # （例如 asar 里的技能目录），磁盘上的技能仍然能被发现。
+        # 关掉它 = 只做「强制刷新 + 诊断」，不再补技能来源。
+        fallbackRoots: true
+        # 额外扫描的技能根目录（排在项目根之后、用户根之前）。
+        customSkillDirs: []
+        # 兜底提供方轮询技能根目录的间隔（毫秒）；0 = 不轮询，只靠工具手动刷新。
+        watchIntervalMs: 2000

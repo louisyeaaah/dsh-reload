@@ -1,0 +1,19 @@
+# 依赖与构建产物
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+
+# 打包 / 发布产物
+*.tgz
+*.tar.gz
+dist/
+
+# 编辑器 / 系统
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# 本地临时验证
+tmp/
+out/
