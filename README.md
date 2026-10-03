@@ -218,3 +218,8 @@ Steps 5–7 run inside `ctx.hmr.runExclusive()` when HMR is present, so a manual
 | [`DESIGN.md`](./DESIGN.md) | Host internals, design decisions, measured evidence |
 
 [`README.zh.md`](./README.zh.md) is the Chinese version. License: MIT.
+
+---
+
+Built by [@louisyeaah](https://x.com/louisyeaah) in Sydney. I post what ships and what flops.
+Portfolio: [louisyeaaah.github.io](https://louisyeaaah.github.io) · All tools: [github.com/louisyeaaah](https://github.com/louisyeaaah)

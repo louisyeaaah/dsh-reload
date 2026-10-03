@@ -230,3 +230,8 @@ scripts/verify.sh        # 语法 + patch YAML + 工具清单 + 纯逻辑单测
 | [`lib/shared.js`](./lib/shared.js) | 宿主结构读取、模块缓存操作、提供方诊断 |
 | [`skills/dsh-reload/SKILL.md`](./skills/dsh-reload/SKILL.md) | 给 agent 用的技能（什么时候用哪个工具） |
 | [`DESIGN.md`](./DESIGN.md) | 宿主内部机制、实现取舍、实测证据 |
+
+---
+
+作者 [@louisyeaah](https://x.com/louisyeaah)（悉尼）—— 发了什么、翻车了什么都会写。
+作品站：[louisyeaaah.github.io](https://louisyeaaah.github.io) · 全部工具：[github.com/louisyeaaah](https://github.com/louisyeaaah)
