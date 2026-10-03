@@ -4,6 +4,18 @@
 英文条目见 README.md；版本号同时出现在工具输出的末尾（`— dsh-reload vX.Y.Z`），
 所以「重载之后版本号变了」本身就是新代码生效的证据。
 
+## 0.1.5 — 卸载脚本报错修复
+
+- **修 `scripts/uninstall.sh` 在最后一步崩溃**：`say "已移除插件行（$PATCH）"` 里
+  `$PATCH` 后面紧跟全角括号，bash 把 `PATCH）` 当成变量名，在 `set -u` 下报
+  `unbound variable`。插件行其实**已经删掉了**，但脚本以错误码退出 ——
+  调用方会以为卸载失败。
+- 现在的写法是 `${PATCH}`。这个坑在本项目里出现过四次（README 的「已知坑」记着），
+  所以这次顺带加了机器检查：`node scripts/check-shell-vars.mjs`。
+- **`scripts/` 没被打进包里**：`package.json` 的 `files` 白名单只列了 `lib`/`skills`/文档，
+  但 README 教的卸载方式就是 `scripts/uninstall.sh` —— 从市场装的人拿不到这个文件。
+  现已加入白名单。
+
 ## 0.1.4 — 首个公开发布
 
 - 打包成可分发的 DSH bundle：`dsh.bundle.patch` + `dsh plugin add` 安装路径。

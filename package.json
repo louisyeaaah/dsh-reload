@@ -1,6 +1,6 @@
 {
   "name": "dsh-reload",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Hot-reload DSH plugins and skills without restarting: reload_plugin re-imports a loaded plugin's own modules and re-applies it (with rollback), reload_skill forces skill re-discovery and diagnoses why a skill is invisible. Ships a skill and two slash commands.",
   "private": false,
   "type": "module",
@@ -11,6 +11,7 @@
   },
   "files": [
     "lib",
+    "scripts",
     "skills",
     "cordis.patch.yml",
     "README.md",

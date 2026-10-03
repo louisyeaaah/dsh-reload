@@ -27,7 +27,7 @@ text = open(patch, encoding='utf-8').read()
 text = re.sub(re.escape(begin) + r'.*?' + re.escape(end) + r'\n?', '', text, flags=re.S)
 open(patch, 'w', encoding='utf-8').write(text)
 PY
-  say "patch   : 已移除插件行（$PATCH）"
+  say "patch   : 已移除插件行（${PATCH}）"
 fi
 
 [ -d "$DEST" ] && rm -rf "$DEST" && say "插件    : 已删除 $DEST"
